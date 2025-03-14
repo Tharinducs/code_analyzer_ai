@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Toolbar, Drawer, List, ListItem, ListItemText, Stack, } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NAV_ITEMS } from "@/lib/constants";
-import { ImageContainer, MobileMenuButton, NavbarContainer, NavBarHeaderTitle, NavLinks } from "./headerStyles";
+import { ImageContainer, MobileMenuButton, NavbarContainer, NavBarHeaderTitle, NavLinks } from "./header.style";
 
 const Header = () => {
   const [open, setOpen] = useState(false);

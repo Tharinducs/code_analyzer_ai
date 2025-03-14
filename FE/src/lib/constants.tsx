@@ -40,39 +40,49 @@ export const NAV_ITEMS = [
 
 export const ENV_PATH = "environment/.env."
 
+export const FEATURE_IDS = {
+  IMPROVE: 'improve',
+  TRANSLATE: 'translate',
+  COMPLEXITY: 'complexity',
+  DEBUG: 'debug',
+  DOCUMENT: 'document',
+  ANALYSE: 'analayse',
+  RUNNER : 'runner'
+}
+
 export const FEATURES = [
     {
-      id: "explanation",
+      id: FEATURE_IDS.ANALYSE,
       label: "Code Explanation",
       icon: <CodeIcon />,
     },
     {
-      id: "improvement",
+      id: FEATURE_IDS.IMPROVE,
       label: "Improvement Suggestions",
       icon: <LightbulbIcon />,
     },
     {
-      id: "translation",
+      id: FEATURE_IDS.TRANSLATE,
       label: "Code Translation",
       icon: <TranslateIcon />,
     },
     {
-      id: "complexity",
+      id: FEATURE_IDS.COMPLEXITY,
       label: "Time Complexity",
       icon: <TimerIcon />,
     },
     {
-      id: "debugging",
+      id: FEATURE_IDS.DEBUG,
       label: "Error Detection",
       icon: <BugReportIcon />,
     },
     {
-      id: "documentation",
+      id: FEATURE_IDS.DOCUMENT,
       label: "Documentation",
       icon: <DescriptionIcon />,
     },
     {
-      id: "runner",
+      id: FEATURE_IDS.RUNNER,
       label: "Code Runner",
       icon: <PlayArrowIcon />,
     },
