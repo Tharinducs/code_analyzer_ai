@@ -5,11 +5,18 @@ export const codeApi = createApi({
   reducerPath: "codeApi",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   endpoints: (builder) => ({
-    analyseCode: builder.query({
-      query: () => "/posts",
+    analyseCode: builder.mutation({
+      query: (codeData) => ({
+        url: "/code/explain-code", 
+        method: "POST",
+        body: codeData, 
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }),
     }),
   }),
 });
 
 // Export the auto-generated hook
-export const { useAnalyseCodeQuery } = codeApi;
+export const { useAnalyseCodeMutation } = codeApi;

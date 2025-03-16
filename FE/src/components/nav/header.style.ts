@@ -1,9 +1,8 @@
 import { AppBar, IconButton } from "@mui/material";
 import styled from "styled-components";
 
-// Styled components
 const NavbarContainer = styled(AppBar)`
-  background-color: #3f51b5; // MUI Primary Color
+  background-color: #3f51b5;
 `;
 
 const NavLinks = styled.div`
@@ -13,16 +12,6 @@ const NavLinks = styled.div`
 
   @media (max-width: 768px) {
     display: none;
-  }
-`;
-
-const MobileMenuButton = styled(IconButton)`
-  display: block;
-  color: #ffffff;
-
-  @media (max-width: 768px) {
-    display: block;
-    margin-right: 20px;
   }
 `;
 
@@ -37,7 +26,6 @@ const NavBarHeaderTitle = styled.h3`
 
 export {
     ImageContainer,
-    MobileMenuButton,
     NavLinks,
     NavbarContainer,
     NavBarHeaderTitle

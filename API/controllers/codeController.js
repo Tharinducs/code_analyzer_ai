@@ -4,7 +4,8 @@ const { TASKS, PROMPTS, DEFAULT_EXPLANATION } = require('../constants');
 
 const schema = Joi.object({
     code: Joi.string().required(),
-    task: Joi.string().required()
+    task: Joi.string().required(),
+    lang: Joi.string()
 });
 
 /**
@@ -14,7 +15,7 @@ const schema = Joi.object({
  */
 exports.explainCode = async (req, res) => {
     try {
-        const error = schema.validate(req.body)
+        const {error} = schema.validate(req.body)
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }
@@ -27,7 +28,7 @@ exports.explainCode = async (req, res) => {
                 prompt = `${PROMPTS[TASKS.IMPROVE]}${code}`;
                 break;
             case TASKS.TRANSLATE:
-                prompt = `${PROMPTS[TASKS.TRANSLATE]}${code}`;
+                prompt = `${PROMPTS[TASKS.TRANSLATE]}${lang}:\n\n${code}`;
                 break;
             case TASKS.COMPLEXITY:
                 prompt = `${PROMPTS[TASKS.COMPLEXITY]}${code}`;

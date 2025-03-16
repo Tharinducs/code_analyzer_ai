@@ -33,7 +33,7 @@ const EditorSection = styled.div`
 `
 const ResultSection = styled.div`
   flex: 1;
-  padding: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -42,8 +42,8 @@ const ResultSection = styled.div`
 const ResultContainer = styled(Paper)`
   padding: 16px;
   margin-top: 16px;
-  min-height: 200px;
-  height: 58%;
+  min-height: 400px;
+  max-height: 90%;
   overflow-y: auto;
   background-color: #ffffff;
   color: #333333;

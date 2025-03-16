@@ -1,10 +1,10 @@
 import { Box, Button, FormControl, InputLabel, MenuItem, Select } from "@mui/material"
-import { CodeEditorContainer, CodeTextarea, EditorSection } from "./code.style"
+import { CodeEditorContainer, EditorSection } from "./code.style"
 import {
     PlayArrow as PlayArrowIcon,
     Save as SaveIcon
 } from "@mui/icons-material"
-import { FEATURE_IDS } from "@/lib/constants"
+import { FEATURE_IDS, LANGUAGES_LIST } from "@/lib/constants"
 import { Editor } from "@monaco-editor/react";
 
 interface EditorSectionProps {
@@ -16,10 +16,10 @@ interface EditorSectionProps {
     analyzeCode: any,
     isAnalyzing: boolean,
     code: string,
-    setCode:any
+    setCode: any
 }
 
-const EditorSectionComponent = ({ language, setLanguage, activeFeature, targetLanguage, setTargetLanguage, analyzeCode, isAnalyzing, code,setCode }: EditorSectionProps) => {
+const EditorSectionComponent = ({ language, setLanguage, activeFeature, targetLanguage, setTargetLanguage, analyzeCode, isAnalyzing, code, setCode }: EditorSectionProps) => {
     return (
         <EditorSection>
             <Box
@@ -32,11 +32,7 @@ const EditorSectionComponent = ({ language, setLanguage, activeFeature, targetLa
                 <FormControl variant="outlined" size="small" sx={{ width: 150 }}>
                     <InputLabel>Language</InputLabel>
                     <Select value={language} onChange={(e) => setLanguage(e.target.value)} label="Language">
-                        <MenuItem value="javascript">JavaScript</MenuItem>
-                        <MenuItem value="typescript">TypeScript</MenuItem>
-                        {/* <MenuItem value="python">Python</MenuItem>
-                        <MenuItem value="java">Java</MenuItem>
-                        <MenuItem value="csharp">C#</MenuItem> */}
+                        {LANGUAGES_LIST.map((item, index) => <MenuItem key={index} value={item.key}>{item.value}</MenuItem>)}
                     </Select>
                 </FormControl>
 
@@ -44,11 +40,7 @@ const EditorSectionComponent = ({ language, setLanguage, activeFeature, targetLa
                     <FormControl variant="outlined" size="small" sx={{ width: 150 }}>
                         <InputLabel>Target</InputLabel>
                         <Select value={targetLanguage} onChange={(e) => setTargetLanguage(e.target.value)} label="Target">
-                            {/* <MenuItem value="python">Python</MenuItem> */}
-                            <MenuItem value="javascript">JavaScript</MenuItem>
-                            <MenuItem value="typescript">TypeScript</MenuItem>
-                            {/* <MenuItem value="java">Java</MenuItem>
-                            <MenuItem value="csharp">C#</MenuItem> */}
+                            {LANGUAGES_LIST.filter((litem) => litem.key !== language).map((item, index) => <MenuItem key={index} value={item.key}>{item.value}</MenuItem>)}
                         </Select>
                     </FormControl>
                 )}
@@ -76,7 +68,7 @@ const EditorSectionComponent = ({ language, setLanguage, activeFeature, targetLa
                     defaultLanguage="javascript"
                     language={language}
                     value={code}
-                    onChange={(newValue:any) => setCode(newValue || "")}
+                    onChange={(newValue: any) => setCode(newValue || "")}
                     theme="light"
                     options={{ fontSize: 14 }}
                 />
