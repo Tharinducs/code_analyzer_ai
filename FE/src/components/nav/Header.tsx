@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Toolbar, Drawer, List, Stack, } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Toolbar, Stack } from "@mui/material";
 import { ImageContainer, NavbarContainer, NavBarHeaderTitle } from "./header.style";
 
 const Header = () => {

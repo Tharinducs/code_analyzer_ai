@@ -35,7 +35,6 @@ const EditorSectionComponent = ({ language, setLanguage, activeFeature, targetLa
                         {LANGUAGES_LIST.map((item, index) => <MenuItem key={index} value={item.key}>{item.value}</MenuItem>)}
                     </Select>
                 </FormControl>
-
                 {activeFeature === FEATURE_IDS.TRANSLATE && (
                     <FormControl variant="outlined" size="small" sx={{ width: 150 }}>
                         <InputLabel>Target</InputLabel>

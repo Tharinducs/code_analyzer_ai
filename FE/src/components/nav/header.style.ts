@@ -1,4 +1,4 @@
-import { AppBar, IconButton } from "@mui/material";
+import { AppBar } from "@mui/material";
 import styled from "styled-components";
 
 const NavbarContainer = styled(AppBar)`
