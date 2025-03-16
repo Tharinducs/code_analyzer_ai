@@ -44,7 +44,6 @@ const EditorSectionComponent = ({ language, setLanguage, activeFeature, targetLa
                         </Select>
                     </FormControl>
                 )}
-
                 <Box>
                     <Button
                         variant="contained"
@@ -61,7 +60,6 @@ const EditorSectionComponent = ({ language, setLanguage, activeFeature, targetLa
                     </Button>
                 </Box>
             </Box>
-
             <CodeEditorContainer>
                 <Editor
                     height="400px"
